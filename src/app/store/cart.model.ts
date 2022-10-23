@@ -45,13 +45,13 @@ export class Cart {
         this.cartPrice = 0
         this.lines.forEach(l => {
             this.itemCount += l.quantity
-            this.cartPrice = l.lineTotal
+            this.cartPrice += l.lineTotal
         })
     }
 
     private getLine(product: Product): CartLine | undefined {
         return this.lines.find(line => line.product.id == product.id)
-    } 
+    }
 
 }
 
