@@ -1,3 +1,4 @@
+import { AuthService } from './auth.service';
 import { RestDataSource } from './rest.datasource';
 import { ProductRepository } from './product.repository';
 import { NgModule } from "@angular/core";
@@ -15,7 +16,9 @@ import { HttpClientModule } from '@angular/common/http';
         Cart,
         Order,
         OrderRepository,
-        {provide: StaticDataSource, useClass: RestDataSource}
+        {provide: StaticDataSource, useClass: RestDataSource},
+        RestDataSource,
+        AuthService
     ]
 })
 
